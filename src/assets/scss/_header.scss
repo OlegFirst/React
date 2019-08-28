@@ -1,5 +1,59 @@
 .header {
-	background-color: $color-header;
+	position: relative;
+	background-color: $color-header-background;
 	color: $color-text;
 	padding: 10px 20px;
+	
+	// Menu
+	&__inner a {
+		color: $color-text;
+		text-decoration: none;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+	
+	// - Items
+	.nav {
+		padding: 0;
+		
+		&__internet-shop {
+			color: $color-text-selected;
+			font-size: 20px;			
+		}
+		
+		&__item {
+			display: inline-block;
+			color: blue;
+			margin-right: 20px;
+			list-style-type: none;
+			
+			&_active>a {
+				color: $color-text-selected;
+			}			
+		}
+	}
+	
+	&__products.products {
+		position: absolute;
+		background-color: $color-header-background;
+		border-top: 4px solid $color-text;
+		padding: 10px;
+		left: 145px;
+		top: 40px;
+		list-style-type: none;
+		
+		a {
+			text-decoration: none;
+		}
+	}
+	
+	&__select-topic {
+		position: absolute;
+		color: $color-text-hint;
+		font-style: italic;
+		top: 75px;
+		left: 20px;
+	}
 }
