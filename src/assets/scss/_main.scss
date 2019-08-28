@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+// Rules for hovered elements
+@media (hover: hover) {
+	nav:hover {
+		color: red !important;
+	}
+}

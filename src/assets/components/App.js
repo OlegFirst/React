@@ -1,14 +1,16 @@
 import React from 'react';
+//import ReactDom from 'react-dom';
+
+import Header from './View/Header/Header';
+
+// TO DO
+// Rename folder names in to lower case
 
 function App() {
   return (
-    <div className="App">
-      <div className="one">
-		<div className="two">
-			OK
-		</div>
-	  </div>
-    </div>
+    <>
+		<Header />
+	</>
   );
 }
 
