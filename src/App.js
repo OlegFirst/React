@@ -1,10 +1,13 @@
 import React from 'react';
-import './App.css';
 
 function App() {
   return (
     <div className="App">
-      OK
+      <div className="one">
+		<div className="two">
+			OK
+		</div>
+	  </div>
     </div>
   );
 }
