@@ -1,0 +1,12 @@
+.footer {	
+	display: flex;		
+	color: $color-text;
+	background-color: $color-footer-background;
+	align-items: center;
+	justify-content: center;	
+	height: $header-height;
+	
+	&__year {		
+		text-align: center;
+	}
+}

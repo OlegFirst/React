@@ -1,0 +1,26 @@
+.container {
+	height: calc(100vh - #{$header-height + $footer-height + 20px});
+	
+	%containerTextCenter {
+		text-align: center;
+	}
+
+	h1 {
+		@extend %containerTextCenter;
+		color: $color-text-selected;
+		padding: 50px 0;
+		text-transform: uppercase;
+	}
+	
+	&__message {
+		position: relative;
+		display: inline-block;
+		left: -100%;
+		transition: all 1s;
+		
+		&_come-in {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}

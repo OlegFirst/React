@@ -2,33 +2,43 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 // Menu
-function Navigation() {
-	
-	let itemActivated = (e) => {
-		console.log(e.target);
+class Navigation extends React.Component{	
+	constructor(props) {
+		super(props);
+		this.state = {}
+		
+		this.itemActivated = this.itemActivated.bind(this);
 	}
 	
-	componentDidMount() {
-		console.log(1);
+	itemActivated(e) {
+		document.querySelectorAll('.nav__item').forEach((item) => {
+			item.classList.remove('one');
+		});
+		e.target.parentNode.classList.add('one');
 	}
 	
-	return (
-		<Router>
-			<nav className="header__inner">
-				<ul className="header__nav nav">
-					<li className="nav__item nav__item_active" onClick={(e) => {itemActivated(e)}}>
-						<Link className="nav__internet-shop" to="/">InternetShop</Link>
-					</li>
-					<li className="nav__item products" onClick={(e) => {itemActivated(e)}}>
-						<Link to="/products">Products</Link>
-					</li>
-				</ul>
-				
-				<Route exact path="/" component={Home} />
-				<Route path="/products" component={Products} />
-			</nav>
-		</Router>
-	)
+	componentDidMount() {}
+	
+	render() {
+		console.log(this.state);
+		return (
+			<Router>
+				<nav className="header__inner">
+					<ul className="header__nav nav">
+						<li id="item1" className="nav__item nav__item_active" onClick={this.itemActivated}>
+							<Link className="nav__internet-shop" to="/">InternetShop</Link>
+						</li>
+						<li id="item2" className="nav__item products" onClick={this.itemActivated}>
+							<Link to="/products">Products</Link>
+						</li>
+					</ul>
+					
+					<Route exact path="/" component={Home} />
+					<Route path="/products" component={Products} />
+				</nav>
+			</Router>
+		)
+	}	
 }
 
 function Home() {

@@ -1,6 +1,11 @@
 .header {
 	position: relative;
+	display: flex;
 	background-color: $color-header-background;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: $header-height;
 	color: $color-text;
 	padding: 10px 20px;
 	
@@ -55,5 +60,10 @@
 		font-style: italic;
 		top: 75px;
 		left: 20px;
+	}
+	
+	// Header elements
+	&__elements {
+		
 	}
 }
