@@ -13,10 +13,6 @@
 	&__inner a {
 		color: $color-text;
 		text-decoration: none;
-
-		&:hover {
-			font-weight: bold;
-		}
 	}
 	
 	// - Items
@@ -24,29 +20,39 @@
 		padding: 0;
 		
 		&__internet-shop {
-			color: $color-text-selected;
+			color: $color-text;
 			font-size: 20px;			
+		}
+		
+		&__item>span {
+			position: relative;
+			cursor: pointer;
 		}
 		
 		&__item {
 			display: inline-block;
-			color: blue;
+			color: $color-text;
 			margin-right: 20px;
 			list-style-type: none;
 			
-			&_active>a {
+			&_active {
 				color: $color-text-selected;
+				
+				& ul {
+					display: block;
+				}
 			}			
 		}
 	}
 	
 	&__products.products {
+		display: none;
 		position: absolute;
 		background-color: $color-header-background;
 		border-top: 4px solid $color-text;
 		padding: 10px;
 		left: 145px;
-		top: 40px;
+		top: 54px;
 		list-style-type: none;
 		
 		a {
