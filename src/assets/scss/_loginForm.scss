@@ -1,0 +1,18 @@
+.login {
+	$padding: 20px;
+
+	position: fixed;
+	@include theme(card);
+	width: 200px;
+	right: 10px;
+	top: 10px;
+	
+	&__user-name {
+		width: calc(100% - #{$padding});
+		margin: 10px 0;
+	}
+	
+	&__submit {
+		width: 100%;
+	}
+}

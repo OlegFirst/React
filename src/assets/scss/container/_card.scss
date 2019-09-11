@@ -1,0 +1,46 @@
+.card {
+	display: inline-block;
+	position: relative;
+	color: $color-text-hint;
+	border: 1px solid $color-text-hint;
+	border-radius: 10px;
+	width: 150px;
+	height: 300px;
+	margin: 20px;
+	padding: 10px;
+	overflow: hidden;
+	
+	&>.row {
+		padding: 4px 0;
+	}
+	
+	&__name {
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	
+	&__image {
+		width: 100%;
+		height: 100px;
+		overflow: hidden;
+		
+		&>img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+	&__price {
+		margin-top: 20px;
+	}
+	
+	&__trade-mark {
+		position: absolute;
+		background-color: $color-header-background;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+	}
+}

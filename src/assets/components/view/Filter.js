@@ -16,10 +16,11 @@ class Filter extends React.Component {
 	}
 	
 	render() {
+		const one = 'display: none';
 		return (
 			<div className="filter">
-				<h1>Filter</h1>
-				<button onClick={this.okButton}>OK</button>
+				<h4>Filter</h4>
+				<button onClick={this.okButton} style={{display: 'none'}}>OK</button>
 			</div>
 		)
 	}

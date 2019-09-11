@@ -11,3 +11,16 @@
 	justify-content: center;
 	align-items: center;
 }
+
+@mixin theme($themeName) {
+	@if $themeName == card {
+		color: $color-text;
+		background-color: $color-text-hint;
+		border-radius: 10px;
+		padding: 10px 20px;
+	} @else if $themeName == custom {
+		color: red;
+	} @else {
+		color: yellow;
+	}
+}

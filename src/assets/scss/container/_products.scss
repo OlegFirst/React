@@ -1,0 +1,10 @@
+.products {
+	@include flex-row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	
+	&__content {
+		//border: 1px solid;
+		width: calc(100% - #{$filter-width});
+	}
+}

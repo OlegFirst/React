@@ -2,26 +2,21 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import HeaderElements from './view/header/HeaderElements';
 import Home from './view/container/Home';
-import Filter from './view/Filter';
 import Sweets from './view/container/products/Sweets';
 import Vegetables from './view/container/products/Vegetables';
 import Fruits from './view/container/products/Fruits';
 import Footer from './view/Footer';
 
-// TO DO
-// Search
-// SCSS:
-// - change flex to flex-row as a mixin
-
-var path = null;
-
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {filter: null}
+		this.state = {}
 		
 		this.itemActivated = this.itemActivated.bind(this);
-		this.filterHandler = this.filterHandler.bind(this);
+		//this.filterHandler = this.filterHandler.bind(this);
+		
+		// Create reference for 'LoginForm' - component
+		this.myRef = React.createRef();
 	}
 
 	itemActivated(e) {
@@ -31,12 +26,10 @@ class App extends React.Component {
 		e.target.parentNode.classList.add('nav__item_active');
 	}
 	
-	componentDidMount() {}
-	
 	// Handler of the callback from FILTER includes new parameters
-	filterHandler(res) {
+	/* filterHandler(res) {
 		this.setState({filter: res});
-	}
+	}*/
 	
 	render() {
 		return (
@@ -66,12 +59,10 @@ class App extends React.Component {
 					<HeaderElements />
 				</header>
 				<section className="container">
-					<Filter filterParameters={this.filterHandler}/>
-					State: {this.state.filter}
 					<Route exact path="/" component={Home} />
-					<Route path="/products/sweets" component={() => <Sweets msg={this.state.filter} />} />
+					<Route path="/products/sweets" component={() => <Sweets />} />
 					<Route path="/products/vegetables" component={Vegetables} />
-					<Route path="/products/fruits" component={Fruits} />
+					<Route path="/products/fruits" component={() => <Fruits />} />
 				</section>
 				<Footer />
 			</Router>

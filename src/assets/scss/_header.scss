@@ -70,6 +70,16 @@
 	
 	// Header elements
 	&__elements {
-		
+		&>button {
+			color: $color-text;
+			background-color: inherit;
+			border: none;
+			cursor: pointer;
+		}
+	}
+	
+	// Header outer
+	&__outer {
+		position: absolute;
 	}
 }
