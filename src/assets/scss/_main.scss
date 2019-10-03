@@ -38,3 +38,10 @@ input[type='submit'] {
 		background-color: $color-header-background;
 	}
 }
+
+button.type1 {
+	background-color: inherit;
+	color: $color-button;
+	border: none;
+	cursor: pointer;
+}

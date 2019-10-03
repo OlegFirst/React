@@ -1,0 +1,30 @@
+.about {
+
+	.article {
+		width: 80%;
+		margin: 0 auto;
+		
+		&__container {			
+			line-height: 30px;
+			padding-top: 20px;
+			height: 100%;
+			overflow: hidden;			
+
+			&_cutted {
+				height: 50px;
+			}
+		}
+		
+		&__buttons {
+			float: right;
+			
+			&>button {
+				display: none;
+			}
+			
+			.show {
+				display: block;
+			} 
+		}
+	}
+}

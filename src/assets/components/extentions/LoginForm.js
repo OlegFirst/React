@@ -13,7 +13,6 @@ class LoginForm extends React.Component {
 		
 	handleChange(e) {
 		let value = e.target.value;
-		console.log(value);
 		this.setState({
 			userName: value
 		});
@@ -21,7 +20,11 @@ class LoginForm extends React.Component {
 	
 	submit(e) {
 		e.preventDefault();
-		this.props.hideForm();
+		console.log(this.state.userName);
+		if (this.state.userName === null || this.state.userName === '')
+			alert('Field doesn`t correct');
+		else
+			this.props.hideForm();
 	}
 	
 	render() {
@@ -36,6 +39,7 @@ class LoginForm extends React.Component {
 						type="text"
 						placeholder="User name"
 						maxLength="10"
+						autoFocus
 						onChange={this.handleChange}
 					/>
 					<input

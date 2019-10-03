@@ -28,7 +28,10 @@ class HeaderElements extends React.Component {
 				<button type="button">Search</button>
 			</div>
 			<div className="header__outer">
-				<LoginForm isActive={this.state.isLoginFormActive} hideForm={this.hideForm} />
+				<LoginForm
+					isActive={this.state.isLoginFormActive}
+					hideForm={this.hideForm}
+				/>
 			</div>
 			</>
 		)

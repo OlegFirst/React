@@ -9,7 +9,7 @@ function Card(props) {
 				<h3>{card.name}</h3>
 			</div>
 			<div className="card__image row">
-				<img src={card.image} alt="image" />
+				<img src={card.image} alt="product image" />
 			</div>
 			<div className="card__price row">
 				Price: ${card.price}

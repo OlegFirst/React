@@ -1,9 +1,15 @@
 // Server part
+let server = require('./server');
+let router = require('./router');
+let requestHandlers = require('./requestHandlers');
 
-let http = require('http');
-let mysql = require('mysql');
+// Router events
+let handle = {};
+handle['/'] = requestHandlers.home;
+handle['/products'] = requestHandlers.products;
+handle['/products/sweets'] = requestHandlers.productsSweets;
+handle['/products/vegetables'] = requestHandlers.productsVegetables;
+handle['/products/fruits'] = requestHandlers.productsFruits;
+handle['/write'] = requestHandlers.write;
 
-http.createServer(function(req, res) {
-	res.writeHead(200, {'Content-Type': 'text/html'});
-	res.end('Greetings');
-}).listen(8080);
+server.start(router.route, handle);

@@ -5,15 +5,21 @@ import Home from './view/container/Home';
 import Sweets from './view/container/products/Sweets';
 import Vegetables from './view/container/products/Vegetables';
 import Fruits from './view/container/products/Fruits';
+import About from './view/container/About';
 import Footer from './view/Footer';
+
+import Notifies from './view/container/Notifies';
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {}
+		this.state = {
+			notifyMessage: null
+		}
 		
 		this.itemActivated = this.itemActivated.bind(this);
 		//this.filterHandler = this.filterHandler.bind(this);
+		this.notifyClose = this.notifyClose.bind(this);
 		
 		// Create reference for 'LoginForm' - component
 		this.myRef = React.createRef();
@@ -31,6 +37,10 @@ class App extends React.Component {
 		this.setState({filter: res});
 	}*/
 	
+	notifyClose() {
+		this.setState({notifyMessage: null});
+	}
+	
 	render() {
 		return (
 			<Router>
@@ -44,7 +54,7 @@ class App extends React.Component {
 								<span>Products</span>
 								<ul className="header__products products">
 									<li className="products__item">
-										<Link to="/products/sweets">Sweets</Link>
+										<Link to="/products/sweets">Sweets</Link>	
 									</li>
 									<li className="products__item">
 										<Link to="/products/vegetables">Vegetables</Link>
@@ -53,6 +63,9 @@ class App extends React.Component {
 										<Link to="/products/fruits">Fruits</Link>
 									</li>
 								</ul>
+							</li>
+							<li className="nav__item">
+								<Link to="/about">About</Link>
 							</li>
 						</ul>						
 					</nav>
@@ -63,6 +76,10 @@ class App extends React.Component {
 					<Route path="/products/sweets" component={() => <Sweets />} />
 					<Route path="/products/vegetables" component={Vegetables} />
 					<Route path="/products/fruits" component={() => <Fruits />} />
+					<Route path="/about" component={About} />
+					<div>
+						<Notifies.LoginFormError message={this.state.notifyMessage} callback={this.notifyClose} />
+					</div>
 				</section>
 				<Footer />
 			</Router>

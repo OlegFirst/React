@@ -1,6 +1,8 @@
 @import '_filter.scss';
 @import '_products.scss';
 @import '_card.scss';
+@import '_about.scss';
+@import '_notifies.scss';
 
 .container {
 	height: calc(100vh - #{$header-height + $footer-height + 60px});
